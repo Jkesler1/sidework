@@ -1,0 +1,22 @@
+import random
+
+class LotteryTicket:
+    def __init__(self, min_number=1, max_number=69,num_numbers=6):
+        self.min_number = min_number
+        self.max_number = max_number
+        self.num_numbers = num_numbers
+        self.ticket_numbers = []
+
+    def generate_numbers(self):
+        self.ticket_numbers = random.sample(range(self.min_number, self.max_number + 1), self.num_numbers)
+        self.ticket_numbers.sort()
+
+    def get_ticket_numbers(self):
+        return self.ticket_numbers
+
+lottery_ticket = LotteryTicket()
+lottery_ticket.generate_numbers()
+ticket_numbers = lottery_ticket.get_ticket_numbers()
+
+print("Your lottery ticket numbers:", ticket_numbers)
+
