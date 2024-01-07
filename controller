@@ -1,0 +1,20 @@
+from lottery_ticket import LotteryTicket
+
+def get_user_input():
+    min_number = int(input("Enter the minimum number: "))
+    max_number = int(input("Enter the maximum number: "))
+    num_numbers = int(input("Enter the number of random numbers to generate: "))
+    return min_number, max_number, num_numbers
+
+def main():
+    min_number, max_number, num_numbers = get_user_input()
+
+    lottery_ticket = LotteryTicket(min_number, max_number, num_numbers)
+
+    lottery_ticket.generate_numbers()
+
+    ticket_numbers = lottery_ticket.get_ticket_numbers()
+    print("Your lottery ticket numbers:", ticket_numbers)
+
+if __name__ == "__main__":
+    main()
